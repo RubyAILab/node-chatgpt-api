@@ -1,6 +1,6 @@
 {
   "name": "@rubyai/chatgpt-api",
-  "version": "1.34.0",
+  "version": "2.0.0",
   "description": "A ChatGPT implementation using the official ChatGPT model via OpenAI's API.",
   "main": "index.js",
   "bin": {
