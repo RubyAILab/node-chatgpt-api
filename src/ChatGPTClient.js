@@ -420,7 +420,11 @@ ${botMessage.message}
             }
             promptPrefix = `${this.startToken}Instructions:\n${promptPrefix}`;
         } else {
-            promptPrefix = `${this.startToken}When a user wants to draw an image, always only respond with 'Ok, I will do it: [the text describes the image the user wants to try not ASCII].' no more emoji or other text. For example,User: Draw a cat image, you: Ok, I will try it: a cat.\n${this.endToken}\n\n`;
+            const currentDateString = new Date().toLocaleDateString(
+                'en-us',
+                { year: 'numeric', month: 'long', day: 'numeric' },
+            );
+            promptPrefix = `${this.startToken}Instructions:\nYou are ChatGPT, a large language model trained by OpenAI. Respond conversationally.\nCurrent date: ${currentDateString}${this.endToken}\n\n`;
         }
 
         const promptSuffix = `${this.startToken}${this.chatGptLabel}:\n`; // Prompt ChatGPT to respond.
